@@ -8,8 +8,12 @@
     "start": "next start"
   },
   "dependencies": {
+    "konva": "3.2.5",
     "next": "10.0.3",
     "react": "17.0.1",
-    "react-dom": "17.0.1"
+    "react-device-detect": "^1.14.0",
+    "react-dom": "17.0.1",
+    "react-konva": "^17.0.0-0",
+    "react-spring": "^8.0.27"
   }
 }
