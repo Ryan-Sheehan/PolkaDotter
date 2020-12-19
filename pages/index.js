@@ -143,7 +143,8 @@ export default class Home extends Component {
       dotCounter: 10,
       dotSize: 40,
       selectedImage: null,
-      preview: null
+      preview: null,
+      menuActive: true,
     }
     this.height = 0;
     this.width = 0;
@@ -195,14 +196,25 @@ export default class Home extends Component {
 
   onClick = () => {
     this.child.current.handleExport();
-  };
+  }
+  menuToggle = () => {
+    this.setState({menuActive: !this.state.menuActive});
+    console.log('called')
+  }
   
   
 
 
   render() {
 
-  const {dotCounter, dotSize, selectedImage, preview, imageHeight, imageWidth} = this.state;
+  const {
+    dotCounter, 
+    dotSize, 
+    selectedImage, 
+    preview, 
+    imageHeight, 
+    imageWidth,
+    menuActive} = this.state;
   return (
     <div className={styles.container}>
       <Head>
@@ -230,9 +242,11 @@ export default class Home extends Component {
       <div className="upload"><label>Open Image</label>
       <input className="upload-inner" type="file" onChange={this.onSelectFile} /></div>
             
-      <div className="save">Polka dot your image</div>
+      <div className="menu-toggle" onClick={this.menuToggle
+      }>{menuActive ? "Hide Menu" : "Show Menu"}</div>
+      <div className="save">Screenshot to save</div>
 
-      <div className={"form"}>
+      <div className={menuActive ? "form" : "form form-inactive"}>
       <div className={"form-row label"}>Dot Count</div>
       <div className={"form-row"}>
         <div className="num-button minus" onClick={() => this.decreaseDotCounter()}>-</div>
@@ -245,11 +259,11 @@ export default class Home extends Component {
         <div className="num">{dotSize}</div>
         <div className="num-button plus" onClick={() => this.increaseDotSize()}>+</div>
       </div>
-      <div className={"form-row"}>
+      {/*<div className={"form-row"}>
       <div className={"save-button"} onClick={this.onClick}>
         Save Image
       </div>
-      </div>
+      </div>*/}
       </div>
 
     </div>
