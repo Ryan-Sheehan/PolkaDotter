@@ -13,6 +13,21 @@
   
   src: url(./SwearItalicVariable.woff2);
 }
+@font-face {
+  font-family: SwearItalicVar;
+  
+  src: url(./SwearItalicVariable.woff2);
+}
+@font-face {
+  font-family: SwearRomanVar;
+  
+  src: url(./SwearRomanVariable.woff2);
+}
+@font-face {
+  font-family: SwearCilatiVar;
+  
+  src: url(./SwearCilatiVariable.woff2);
+}
 
 html,
 body {
@@ -71,7 +86,7 @@ body {
 	position: absolute;
 	top: 1.5rem;
 	right: 1.25rem;
-	font-family: SwearVar;
+	font-family: SwearCilatiVar;
 	font-variation-settings: 'wght' 200;
 	font-size: 1.25rem;
 }
@@ -81,7 +96,7 @@ body {
 	position:absolute;
 	bottom: 1.25rem;
 	width: calc(100vw - 2.5rem);
-	
+	background: rgba(255,255,255,0.5);
 	border:1px solid black;
 	border-radius: 18px;
 	display: flex;
@@ -107,12 +122,13 @@ body {
 	margin-bottom: 0.625rem;
 }
 .form-row:last-of-type {
+	margin-top: 0.625rem;
 	margin-bottom: 1.25rem;
 }
 .label {
 	margin-top: 0.625rem;
-	font-family: SwearVar;
-	font-variation-settings: 'wght' 800;
+	font-family: SwearCilatiVar;
+	font-variation-settings: 'wght' 200;
 }
 .num {
 	width: 40px;
